@@ -1,0 +1,52 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/work
+plugins: anyio-4.15.1, cov-7.1.0, langsmith-0.14.4
+collecting ... collected 43 items
+
+test_agent.py::test_routes_to_planner_when_no_plan PASSED                [  2%]
+test_agent.py::test_relevance_failure_re_enters_at_retrieval_not_accuracy_budget PASSED [  4%]
+test_agent.py::test_accuracy_failure_re_enters_at_processing_keeping_evidence PASSED [  6%]
+test_agent.py::test_insufficient_evidence_triggers_replan PASSED         [  9%]
+test_agent.py::test_exhausted_budget_escalates_to_human[relevance-relevance_retries] PASSED [ 11%]
+test_agent.py::test_exhausted_budget_escalates_to_human[accuracy-accuracy_retries] PASSED [ 13%]
+test_agent.py::test_exhausted_budget_escalates_to_human[insufficient_evidence-replans] PASSED [ 16%]
+test_agent.py::test_orchestrator_node_uses_injected_settings PASSED      [ 18%]
+test_agent.py::test_planner_parses_plan PASSED                           [ 20%]
+test_agent.py::test_planner_falls_back_on_malformed_response PASSED      [ 23%]
+test_agent.py::test_retrieval_flags_insufficient_evidence PASSED         [ 25%]
+test_agent.py::test_retrieval_survives_a_dead_source PASSED              [ 27%]
+test_agent.py::test_processing_drops_unparseable_paper_without_failing_batch PASSED [ 30%]
+test_agent.py::test_validator_passes_traceable_claims PASSED             [ 32%]
+test_agent.py::test_validator_rejects_fabricated_span PASSED             [ 34%]
+test_agent.py::test_validator_flags_irrelevant_results PASSED            [ 37%]
+test_agent.py::test_storage_withholds_export_without_approval PASSED     [ 39%]
+test_agent.py::test_escalated_export_is_flagged_in_the_artefact PASSED   [ 41%]
+test_agent.py::test_happy_path_exports_artefact PASSED                   [ 44%]
+test_agent.py::test_accuracy_loop_fires_then_escalates PASSED            [ 46%]
+test_agent.py::test_run_always_terminates_under_worst_case_failures PASSED [ 48%]
+test_agent_extended.py::test_routes_to_retrieval_when_plan_but_no_evidence PASSED [ 51%]
+test_agent_extended.py::test_routes_to_processing_after_retrieval PASSED [ 53%]
+test_agent_extended.py::test_routes_to_validator_after_processing PASSED [ 55%]
+test_agent_extended.py::test_escalated_state_cannot_be_revived PASSED    [ 58%]
+test_agent_extended.py::test_passed_validation_advances_and_commits PASSED [ 60%]
+test_agent_extended.py::test_final_step_goes_to_human_gate PASSED        [ 62%]
+test_agent_extended.py::test_planner_handles_fenced_json PASSED          [ 65%]
+test_agent_extended.py::test_planner_rotates_sources_on_replan PASSED    [ 67%]
+test_agent_extended.py::test_retrieval_returns_papers PASSED             [ 69%]
+test_agent_extended.py::test_retrieval_deduplicates_across_sources PASSED [ 72%]
+test_agent_extended.py::test_processing_extracts_fields PASSED           [ 74%]
+test_agent_extended.py::test_validator_rejects_claim_against_unretrieved_paper PASSED [ 76%]
+test_agent_extended.py::test_validator_tolerates_whitespace_differences PASSED [ 79%]
+test_agent_extended.py::test_validator_ignores_honest_absence PASSED     [ 81%]
+test_agent_extended.py::test_storage_writes_both_formats PASSED          [ 83%]
+test_agent_extended.py::test_human_gate_auto_approves_when_disabled PASSED [ 86%]
+test_agent_extended.py::test_multi_step_plan_visits_retrieval_once_per_step PASSED [ 88%]
+test_agent_extended.py::test_relevance_loop_fires_then_escalates PASSED  [ 90%]
+test_agent_extended.py::test_thin_results_trigger_replan_then_escalate PASSED [ 93%]
+test_agent_extended.py::test_make_default_llm_falls_back_to_local_without_token PASSED [ 95%]
+test_agent_extended.py::test_local_llama_client_reports_missing_model_clearly PASSED [ 97%]
+test_agent_extended.py::test_transition_log_is_complete PASSED           [100%]
+
+============================== 43 passed in 1.10s ==============================

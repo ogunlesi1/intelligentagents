@@ -1,0 +1,36 @@
+{"ts":"2026-10-06 01:55:20,755","level":"INFO","run":"b525aadd","msg":"run started"}
+Deserializing unregistered type __main__.PlanStep from checkpoint. This will be blocked in a future version. Set LANGGRAPH_STRICT_MSGPACK=true to block now, or add to allowed_msgpack_modules to allow explicitly: [('__main__', 'PlanStep')]
+Deserializing unregistered type __main__.Paper from checkpoint. This will be blocked in a future version. Set LANGGRAPH_STRICT_MSGPACK=true to block now, or add to allowed_msgpack_modules to allow explicitly: [('__main__', 'Paper')]
+Deserializing unregistered type __main__.Extraction from checkpoint. This will be blocked in a future version. Set LANGGRAPH_STRICT_MSGPACK=true to block now, or add to allowed_msgpack_modules to allow explicitly: [('__main__', 'Extraction')]
+Deserializing unregistered type __main__.FailureMode from checkpoint. This will be blocked in a future version. Set LANGGRAPH_STRICT_MSGPACK=true to block now, or add to allowed_msgpack_modules to allow explicitly: [('__main__', 'FailureMode')]
+Deserializing unregistered type __main__.ValidationReport from checkpoint. This will be blocked in a future version. Set LANGGRAPH_STRICT_MSGPACK=true to block now, or add to allowed_msgpack_modules to allow explicitly: [('__main__', 'ValidationReport')]
+Deserializing unregistered type __main__.TransitionLog from checkpoint. This will be blocked in a future version. Set LANGGRAPH_STRICT_MSGPACK=true to block now, or add to allowed_msgpack_modules to allow explicitly: [('__main__', 'TransitionLog')]
+{"ts":"2026-10-06 01:58:10,675","level":"INFO","run":"b525aadd","msg":"orchestrator -> planner: no plan yet"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"planner -> plan_created: 4 steps"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> retrieval: step 0 needs evidence"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"retrieval -> retrieved: 5 papers via ['crossref', 'openalex']"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> processing: evidence retrieved, not yet processed"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"processing -> extracted: 3 papers processed; 2 failed: ["10.26226/morressier.5f55fb7d6fdcfc6871991734: Malformed JSON in model response: Expecting ',' delimiter: line 1 column 168 (char 167)", "10.1021/acs.jpca.0c02647.s001: Malformed JSON in model response: Expecting ',' delimiter: line 1 column 144 (char 143)"]"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> validator: extractions await validation"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"validator -> fail:accuracy: 1 of 3 claims could not be traced"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> processing: accuracy retry 1/3"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"processing -> extracted: 5 papers processed"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> validator: extractions await validation"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"validator -> pass: all claims traced to source"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> retrieval: step 1 of 4"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"retrieval -> retrieved: 5 papers via ['crossref', 'openalex']"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> processing: evidence retrieved, not yet processed"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"processing -> extracted: 5 papers processed"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> validator: extractions await validation"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"validator -> fail:accuracy: 3 of 3 claims could not be traced"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> processing: accuracy retry 2/3"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"processing -> extracted: 5 papers processed"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> validator: extractions await validation"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"validator -> fail:accuracy: 3 of 3 claims could not be traced"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> processing: accuracy retry 3/3"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"processing -> extracted: 5 papers processed"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> validator: extractions await validation"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"validator -> fail:accuracy: 3 of 3 claims could not be traced"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"orchestrator -> human_gate: escalated: accuracy retry budget exhausted"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"human_gate -> approved: 5 validated papers | FLAGGED UNVERIFIED: accuracy retry budget exhausted"}
+{"ts":"2026-10-06 01:58:10,676","level":"INFO","run":"b525aadd","msg":"storage -> exported: runs/outputs/b525aadd.md / runs/outputs/b525aadd.json"}
